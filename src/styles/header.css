@@ -1,0 +1,91 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+        margin-top: 2rem;
+
+        width: 6.214rem;
+        height: 3rem;
+    }
+
+    & .switch-container {
+        width: 21.9375rem;
+        margin-top: 2rem;
+
+        position: absolute;
+        
+        display: flex;
+        justify-content: end;
+
+        & .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 29px;
+
+            & input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            & .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--base-gray-400);
+                transition: 0.4s;
+                border-radius: 31px;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    height: 21px;
+                    width: 21px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: white;
+                    transition: 0.4s;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-image: url('../assets/icons/sun.svg');
+                    background-size: 50%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+
+            & input:checked + .slider {
+                background-color: var(--main-green);
+            }
+            
+            & input:checked + .slider:before {
+                transform: translateX(21px);
+                background-image: url('../assets/icons/moon.svg');
+            }
+        }
+    }
+}
+
+@media (width >= 80em) {
+    header {
+        & img {
+            margin-top: 4rem;
+
+            width: 7.25rem;
+            height: 3.5rem;
+        }
+
+        & .switch-container {
+            width: 57rem;
+            margin-top: 0rem;
+        }
+    } 
+}

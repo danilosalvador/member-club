@@ -1,0 +1,26 @@
+.content {
+    display: grid;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width: 21.9375rem;
+
+    > div {
+        background-color: var(--base-gray-100);
+
+        border: 1px solid var(--base-gray-300);
+        border-radius: 1rem;
+    }   
+}
+
+@media (width >= 80em) {
+    .content {
+        width: 57rem;
+
+        grid-template-columns: 20rem 35.5rem;
+        grid-template-rows: 5.625rem 14.5rem 7.3125rem;
+
+        column-gap: 1.5rem;
+        row-gap: 1rem;  
+    }
+}

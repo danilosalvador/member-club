@@ -1,0 +1,99 @@
+.progress {
+    display: flex;
+    align-items: center;
+
+    gap: 1.5rem;
+    padding: 1rem 1.25rem;
+
+    & .progress-content {
+        flex: 1;
+
+        & p {
+            font: var(--text-sm);
+            color: var(--base-gray-500);
+
+            & span {
+                font: var(--title-sm);
+                color: var(--base-gray-600);
+            }
+        }
+
+        & .linear-progress {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+
+            & .bar {
+                flex: 1;
+                height: .5rem;
+                background-color: var(--base-gray-300);
+                border-radius: .5rem;
+
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    
+                    width: var(--progress);
+                    height: inherit;
+
+                    border-radius: inherit;
+                    transition: width ease 1s;
+
+                    background-image: linear-gradient(
+                        90deg, 
+                        var(--grd-1) 0, 
+                        var(--grd-2) 33.33%, 
+                        var(--grd-3) 66.67%, 
+                        var(--grd-4) 100%
+                    );
+                
+                }
+            }
+
+            & small {
+                font: var(--text-xs);
+                color: var(--base-gray-500);
+            }
+        }
+    }
+
+    > img {
+        background-color: var(--base-gray-200);
+        border-radius: 50%;
+
+        padding: .75rem .5rem .5rem;
+
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+@media (width >= 80em) {
+    .progress {
+        grid-column: 2/3;
+        grid-row: 3/4;
+
+        padding: 1.40625rem 2rem;
+
+        & .progress-content {
+            flex: 1;
+    
+            & p {
+                font: var(--text-md);
+                color: var(--base-gray-500);
+    
+                & span {
+                    font: var(--title-md);
+                    color: var(--base-gray-600);
+                }
+            }
+        }
+
+        > img {
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+    }
+}
